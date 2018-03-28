@@ -1,0 +1,16 @@
+comments:
+  allowedFields: ["name", "email", "url", "message"]
+  branch: "master"
+  commitMessage: "Add Staticman data"
+  filename: "entry{@timestamp}"
+  format: "yaml"
+  moderation: false
+  name: "pelican-blog.netlify.com"
+  path: "content/comments/{options.slug}"
+  requiredFields: ["name", "email", "url", "message"]
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "timestamp-seconds"
+  

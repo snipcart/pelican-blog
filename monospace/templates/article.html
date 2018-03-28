@@ -6,8 +6,21 @@
         <a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a></h1>
     {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}
 </header>
+
 <article>
     {{ article.content }}
+    
+    <div id="comment-post">
+        <form method="POST" action="https://api.staticman.net/v2/entry/snipcart/pelican-blog/master">
+            <input name="options[redirect]" type="hidden" value="/">
+            <input name="options[url]" type="hidden" value="{{ article.slug }}">
+            <div><label>Name: <input name="fields[name]" type="text"></label></div>
+            <div><label>E-mail: <input name="fields[email]" type="email"></label></div>
+            <div><label>Message: <textarea name="fields[message]"></textarea></label></div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
     {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
