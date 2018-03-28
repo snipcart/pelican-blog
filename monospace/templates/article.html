@@ -11,7 +11,7 @@
     {{ article.content }}
     
     <div id="comment-post">
-        <form method="POST" action="https://api.staticman.net/v2/entry/snipcart/pelican-blog/master">
+        <form method="POST" action="https://api.staticman.net/v2/entry/snipcart/pelican-blog/master/comments">
             <input name="options[redirect]" type="hidden" value="/">
             <input name="fields[url]" type="hidden" value="{{ article.slug }}">
             <div><label>Name: <input name="fields[name]" type="text"></label></div>
