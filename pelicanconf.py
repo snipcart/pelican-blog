@@ -7,7 +7,7 @@ import yaml, json, sys
 
 AUTHOR = "Snipcart's geek"
 SITENAME = 'A Pelican Blog'
-SITEURL = ''
+SITEURL = 'https://pelican-blog.netlify.com/'
 PLUGINS = ['tipue_search.tipue_search'] 
 PATH = 'content'
 
