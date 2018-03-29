@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+from os import listdir
+from os.path import isfile, join
+import yaml, json, sys
 
 AUTHOR = "Snipcart's geek"
 SITENAME = 'A Pelican Blog'
@@ -18,6 +21,16 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+#Staticman Comments
+commentsPath = "./content/comments"
+
+def ymlToJson(file):
+    with open(commentsPath + "/" + file) as stream:
+        return yaml.load(stream)
+
+commentsYML = [f for f in listdir(commentsPath) if isfile(join(commentsPath, f))]
+COMMENTS = list(map(ymlToJson, commentsYML))
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),

@@ -10,6 +10,15 @@
 <article>
     {{ article.content }}
     
+    <div>
+        <h3 id="comments">COMMENTS</h3>
+        {% for comment in COMMENTS %}
+            {% if comment.url == article.slug %}
+                <p class="comment">{{ comment.name }}: {{ comment.message }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+
     <div id="comment-post">
         <form method="POST" action="https://api.staticman.net/v2/entry/snipcart/pelican-blog/master/comments">
             <input name="options[redirect]" type="hidden" value="/">
@@ -21,6 +30,10 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+    {% for comment in comments %}
+        <h1>HIIII</h1>
+    {% endfor %}
+    
     {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
     <h2>Comments</h2>
     <div id="disqus_thread"></div>

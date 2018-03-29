@@ -105,3 +105,15 @@ input#s { width:70%; height:auto; margin:5px 0px; }
     position : relative;
     top : 8px;
 }
+
+#comments {
+    border-bottom: 1px solid black;
+}
+
+#comment-post {
+    margin-top: 40px;
+}
+
+.comment {
+    border-bottom: 1px solid #BDBDBD;
+}
