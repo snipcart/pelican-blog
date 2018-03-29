@@ -7,7 +7,7 @@ import yaml, json, sys
 
 AUTHOR = "Snipcart's geek"
 SITENAME = 'A Pelican Blog'
-SITEURL = ''
+SITEURL = 'https://github.com/snipcart/pelican-blog/tree/gh-pages'
 PLUGINS = ['tipue_search.tipue_search'] 
 PATH = 'content'
 
